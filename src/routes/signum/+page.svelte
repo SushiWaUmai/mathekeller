@@ -15,8 +15,10 @@
 	}
 
 	const removeValue = () => {
-		values.pop();
-		values = values;
+		if (values.length > 1) {
+			values.pop();
+			values = values;
+		}
 	}
 
 	const updateValue = (idx: number, value: number) => {
@@ -87,23 +89,23 @@
 
 				<div>
 					<p>Finde die Anzahl <Katex math={"z"} /> der disjunkten Zykel von <Katex math={"\\pi"}/></p>
-					<span class="text-xl">
+					<div class="text-xli overflow-scroll">
 						<Katex displayMode math={"\\pi = " + cycleToLatex(cycles) + "\\implies z = " + cycles.length}/>
-					</span>
+					</div>
 				</div>
 
 				<div>
 					<p>Sei <Katex math={"\\pi \\in S_{n}"} /> und <Katex math={"z"} /> die Anzahl der disjunkten Zykel von <Katex math={"\\pi"} /> dann gilt:</p>
-					<span class="text-xl">
+					<div class="text-xl">
 						<Katex displayMode math={"sgn(\\pi) = (−1)^{n−z}"} />
-					</span>
+					</div>
 				</div>
 
 				<div>
 					<p>Wir setzen einfach unsere Werte in die Formel ein.</p>
-					<span class="text-xl">
+					<div class="text-xl overflow-scroll">
 						<Katex displayMode math={"sgn(\\pi) = (−1)^{" + values.length + "-" + cycles.length + "} = (-1)^{" + (values.length - cycles.length) + "} = " + result} />
-					</span>
+					</div>
 				</div>
 			</section>
 
