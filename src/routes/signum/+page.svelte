@@ -88,7 +88,7 @@
 				<h3 class="h3">Rechenweg</h3>
 
 				<div>
-					<p>Finde die Anzahl <Katex math={"z"} /> der disjunkten Zykel von <Katex math={"\\pi"}/></p>
+					<p>Finde die Anzahl <Katex math={"z"} /> der disjunkten Zykel von <Katex math={"\\pi"}/>:</p>
 					<div class="text-xli overflow-scroll">
 						<Katex displayMode math={"\\pi = " + cycleToLatex(cycles) + "\\implies z = " + cycles.length}/>
 					</div>
@@ -102,7 +102,7 @@
 				</div>
 
 				<div>
-					<p>Wir setzen einfach unsere Werte in die Formel ein.</p>
+					<p>Wir setzen einfach unsere Werte in die Formel ein:</p>
 					<div class="text-xl overflow-scroll">
 						<Katex displayMode math={"sgn(\\pi) = (−1)^{" + values.length + "-" + cycles.length + "} = (-1)^{" + (values.length - cycles.length) + "} = " + result} />
 					</div>
@@ -125,7 +125,7 @@
 			<div class="text-xl">
 				<Katex displayMode math={"sgn(\\pi) = (−1)^{n−z}"} />
 			</div>
-			<p>mit <Katex math={"\\pi \\in S_{n}"} /> und <Katex math={"z"} /> die Anzahl der disjunkten Zykel von <Katex math={"\\pi"} /></p>
+			<p>mit <Katex math={"\\pi \\in S_{n}"} /> und <Katex math={"z"} /> die Anzahl der disjunkten Zykel von <Katex math={"\\pi"} />.</p>
 		</section>
 	</div>
 </div>
