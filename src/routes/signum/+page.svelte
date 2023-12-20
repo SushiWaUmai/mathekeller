@@ -2,6 +2,9 @@
 	import Katex from "$lib/Katex.svelte";
 	import SignumInput from "$lib/signum/SignumInput.svelte"
 	import {calculateSignum, checkValid, findCycles} from "$lib/signum/calculateSignum";
+	import Title from "$lib/seo/Title.svelte";
+	import Description from "$lib/seo/Description.svelte";
+	import Keywords from "$lib/seo/Keywords.svelte";
 
 	let values = [2, 1, 3];
 	let cycles: number[][] = [];
@@ -44,6 +47,12 @@
 		return result;
 	}
 </script>
+
+<svelte:head>
+	<Title content="MatheKeller | Signum Rechner" />
+	<Description content="Nutze den MatheKeller Signum-Rechner für schnelle und genaue Berechnungen des Signums von Permutationen in der Algebra. Ideal für Studierende und Lehrkräfte, die sich mit Diskrete Mathematik beschäftigen." />
+	<Keywords content={["Signum-Rechner", "Online-Tool", "Permutation", "Diskrete Strukturen", "Algebra", "Mathematik"]} />
+</svelte:head>
 
 <div class="container mx-auto px-2 py-10">
   <div class="w-full space-y-16 lg:w-2/3">
