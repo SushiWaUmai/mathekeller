@@ -33,6 +33,30 @@ const parallelAdder = (a: number, p: number) => {
 	return table;
 };
 
+const serialAdder = (a: number, p: number) => {
+	const table: number[][] = [];
+	table.push([0, 0, 0]);
+
+	let u = 0;
+	table.push([u, a, p]);
+
+	while (p !== 0) {
+		const lastA = a & 1;
+		const lastP = p & 1;
+
+		const firstA = lastA ^ lastP ^ u;
+		u = lastA + lastP + u > 1 ? 1 : 0;
+
+		a >>= 1;
+		p >>= 1;
+
+		a += firstA << 3;
+		table.push([u, a, p]);
+	}
+
+	return table;
+};
+
 export const generateNeumannTable = (a: number, p: number) => {
 	const tableData = [];
 	const data = vonNeumannAdder(a, p);
@@ -88,4 +112,8 @@ const generateAdderTable = (
 
 export const generateParallelAdderTable = (a: number, p: number) => {
 	return generateAdderTable(a, p, parallelAdder);
+};
+
+export const generateSerialAdderTable = (a: number, p: number) => {
+	return generateAdderTable(a, p, serialAdder);
 };
