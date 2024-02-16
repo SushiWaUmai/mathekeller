@@ -1,7 +1,7 @@
 import { tableMapperValues } from '@skeletonlabs/skeleton';
 import type { TableSource } from '@skeletonlabs/skeleton';
 
-const vonNeumann = (a: number, p: number) => {
+const vonNeumannAdder = (a: number, p: number) => {
 	const table: number[][] = [];
 
 	table.push([0, 0, 0]);
@@ -22,7 +22,7 @@ const vonNeumann = (a: number, p: number) => {
 
 export const generateNeumannTable = (a: number, p: number) => {
 	const tableData = [];
-	const data = vonNeumann(a, p);
+	const data = vonNeumannAdder(a, p);
 
 	for (let i = 0; i < data.length; i++) {
 		const [u, a, p] = data[i];
