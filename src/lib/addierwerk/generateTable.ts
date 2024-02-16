@@ -20,6 +20,19 @@ const vonNeumannAdder = (a: number, p: number) => {
 	return table;
 };
 
+const parallelAdder = (a: number, p: number) => {
+	const table: number[][] = [];
+	table.push([0, 0, 0]);
+	table.push([0, a, p]);
+
+	a = a + p;
+	p = 0;
+	const u = (a & (1 << 4)) != 0 ? 1 : 0;
+
+	table.push([u, a, p]);
+	return table;
+};
+
 export const generateNeumannTable = (a: number, p: number) => {
 	const tableData = [];
 	const data = vonNeumannAdder(a, p);
@@ -43,4 +56,36 @@ export const generateNeumannTable = (a: number, p: number) => {
 	};
 
 	return table;
+};
+
+const generateAdderTable = (
+	a: number,
+	p: number,
+	adderFunc: (a: number, p: number) => number[][]
+) => {
+	const tableData = [];
+	const data = adderFunc(a, p);
+
+	for (let i = 0; i < data.length; i++) {
+		const [u, a, p] = data[i];
+		tableData.push({
+			position: i + 1,
+			u: u,
+			accBin: a?.toString(2).padStart(4, '0'),
+			accDec: a + (u << 4),
+			pufBin: p?.toString(2).padStart(4, '0'),
+			pufDec: p
+		});
+	}
+
+	const table: TableSource = {
+		head: ['U', 'Accumulator Binary', 'Accumulator', 'Puffer Binary', 'Puffer'],
+		body: tableMapperValues(tableData, ['u', 'accBin', 'accDec', 'pufBin', 'pufDec'])
+	};
+
+	return table;
+};
+
+export const generateParallelAdderTable = (a: number, p: number) => {
+	return generateAdderTable(a, p, parallelAdder);
 };
