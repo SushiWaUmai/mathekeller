@@ -5,7 +5,7 @@
 
 	<div>
 		<h2 class="h3">Diskrete Strukturen</h2>
-		<ul class="list-nav list-disc">
+		<ul class="list-nav list-disc pl-4">
 			<li>
 				<a href="/signum">Signum</a>
 			</li>
@@ -14,7 +14,7 @@
 
 	<div>
 		<h2 class="h3">Technische Informatik</h2>
-		<ul class="list-nav list-disc">
+		<ul class="list-nav list-disc pl-4">
 			<li>
 				<a href="/addierwerk/parallel">Parallel Addierwerk</a>
 			</li>
