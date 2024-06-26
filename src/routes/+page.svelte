@@ -13,6 +13,15 @@
 	</div>
 
 	<div>
+		<h2 class="h3">Lineare Algebra</h2>
+		<ul class="list-nav list-disc pl-4">
+			<li>
+				<a href="/determinant">Determinanten</a>
+			</li>
+		</ul>
+	</div>
+
+	<div>
 		<h2 class="h3">Technische Informatik</h2>
 		<ul class="list-nav list-disc pl-4">
 			<li>
